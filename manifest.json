@@ -1,0 +1,9 @@
+{
+  "id": "colorlogic",
+  "name": "ColorLogic",
+  "version": "1.0.0",
+  "minAppVersion": "1.15.1",
+  "description": "Настраивает цвета жирного текста и курсива, копирует встроенный код по нажатию и подсвечивает файлы и папки по уровню вложенности, а также файлы без входящих ссылок.",
+  "author": "Kharchenko Oleksii",
+  "isDesktopOnly": false
+}

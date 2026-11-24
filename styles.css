@@ -1,0 +1,109 @@
+/* Text colors in rendered notes and the Markdown editor. */
+:where(.colorlogic-highlight-bold) :is(.markdown-reading-view, .markdown-preview-view) strong,
+:where(.colorlogic-highlight-bold) .markdown-source-view.mod-cm6 .cm-strong {
+  color: var(--colorlogic-bold-color) !important;
+}
+
+:where(.colorlogic-highlight-italic) :is(.markdown-reading-view, .markdown-preview-view) em,
+:where(.colorlogic-highlight-italic) .markdown-source-view.mod-cm6 .cm-em {
+  color: var(--colorlogic-italic-color) !important;
+}
+
+/* File explorer labels and rule controls. */
+.nav-files-container .colorlogic-explorer-highlight > :is(.nav-folder-title-content, .nav-file-title-content) {
+  color: var(--colorlogic-explorer-color) !important;
+}
+
+.colorlogic-explorer-rule .setting-item-control {
+  flex-wrap: wrap;
+}
+
+.colorlogic-explorer-level {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.colorlogic-explorer-rule input[type="number"] {
+  width: 4em;
+}
+
+/* Reading view: inline code */
+.markdown-reading-view code:not(pre code),
+.markdown-preview-view code:not(pre code) {
+  --colorlogic-inline-code-tint: color-mix(in srgb, var(--colorlogic-inline-code-color), #666);
+  --colorlogic-inline-code-background: color-mix(in srgb, var(--colorlogic-inline-code-tint) 15%, transparent);
+  --colorlogic-inline-code-border: color-mix(in srgb, var(--colorlogic-inline-code-color) 44%, transparent);
+
+  color: var(--colorlogic-inline-code-color, #c792ea) !important;
+  background: var(--colorlogic-inline-code-background, rgba(128, 120, 136, 0.15)) !important;
+  border: 1px solid var(--colorlogic-inline-code-border, #5a4b72) !important;
+  border-radius: 6px !important;
+  padding: 2px 6px !important;
+  font-size: 0.92em;
+  font-weight: 500;
+  cursor: default;
+
+  box-decoration-break: slice;
+  -webkit-box-decoration-break: slice;
+
+  transition:
+    background 0.15s ease,
+    border 0.15s ease;
+}
+
+.markdown-reading-view code.inline-code-click-copy-multiline:not(pre code),
+.markdown-preview-view code.inline-code-click-copy-multiline:not(pre code) {
+  display: inline-block;
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  vertical-align: text-top;
+}
+
+.markdown-reading-view code:not(pre code):hover,
+.markdown-preview-view code:not(pre code):hover {
+  --colorlogic-inline-code-hover-background: color-mix(in srgb, var(--colorlogic-inline-code-tint) 23%, transparent);
+  --colorlogic-inline-code-hover-border: color-mix(in srgb, var(--colorlogic-inline-code-color) 63%, transparent);
+
+  border-color: var(--colorlogic-inline-code-hover-border, #7a67a6) !important;
+  background: var(--colorlogic-inline-code-hover-background, rgba(128, 120, 136, 0.23)) !important;
+}
+
+.markdown-reading-view code:not(pre code):active,
+.markdown-preview-view code:not(pre code):active {
+  --colorlogic-inline-code-active-background: color-mix(in srgb, var(--colorlogic-inline-code-tint) 30%, transparent);
+
+  background: var(--colorlogic-inline-code-active-background, rgba(128, 120, 136, 0.30)) !important;
+  border-color: var(--colorlogic-inline-code-color, #c792ea) !important;
+}
+
+/* Editing view: inline code changes text color only. */
+.markdown-source-view.mod-cm6 .cm-inline-code {
+  color: var(--colorlogic-inline-code-color, #c792ea) !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  cursor: text;
+  transition: none !important;
+}
+
+.markdown-preview-view hr {
+  margin: 0 !important;
+}
+
+.markdown-source-view.mod-cm6 .HyperMD-hr {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  min-height: unset !important;
+}
+
+.markdown-source-view.mod-cm6 .cm-line:has(.cm-hr) {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
